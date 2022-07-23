@@ -445,7 +445,7 @@ a {
     cursor: pointer;
 }
 /*--------------------------------MAIN--------------------------------*/
-main {
+.main {
     background-image: url(img/woman_with_scale.webp);
     background-repeat: no-repeat;
     background-position: right -56px top 32px;
@@ -455,7 +455,7 @@ main {
     flex: 1 1 auto;
 }
 @media (max-width:992px) {
-    main {
+    .main {
         background-image: none;
         background-color: rgb(234, 236, 233);
     }
