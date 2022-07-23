@@ -1518,6 +1518,9 @@ footer{
         padding: 20px;
     }
 }
+.realestate__nav{
+    display: flex;
+}
 .realestate__text img{
     float: right;
 }
