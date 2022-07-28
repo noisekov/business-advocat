@@ -83,6 +83,13 @@ window.addEventListener("scroll", function(){
             doOrderBlock.classList.remove("show");
         }
     })
+
+    window.addEventListener("keydown", function(e){
+        if (e.key == "Escape"){
+            doOrderBlock.classList.add("hidden");
+            doOrderBlock.classList.remove("show");
+        }
+    })
 // }
 
 //mask
@@ -122,3 +129,38 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 
 });
+
+
+
+
+
+//modal window
+const loginForm = document.querySelector(".do-order__name [type=text]");
+const phoneForm = document.querySelector(".do-order__phone [type=password]");
+const form = document.querySelector(".do-order__block form");
+const modal = document.querySelector(".do-order");
+
+
+let isStorageSupport = true;
+let storage = "";
+
+try {
+    storage = localStorage.getItem("login")
+} catch (err) {
+    isStorageSupport = false
+}
+
+
+// loginForm.focus()
+form.addEventListener("submit", function(evt){
+    if (!loginForm || !phoneForm) {
+        evt.preventDefault()
+        modal.classList.add("do-order-error");
+    } else {
+        if (isStorageSupport) {
+            localStorage.setItem ("login", loginForm.value)
+        }
+    }
+})
+
+
